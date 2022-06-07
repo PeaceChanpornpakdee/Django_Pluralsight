@@ -14,6 +14,15 @@
     </p>
     <p>{{message}}</p>
     <p>My name is {{name}}. I'm {{age}} years old.</p>
-    <p>There are currently {{num_meetings}} meetings in the database.</p>
+
+    <h2>
+      <ul>
+        {% for meeting in meetings %}
+        <li>
+          <a href="/meetings/{{meeting.id}}"> {{meeting.title}} </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </h2>
   </body>
 </html>
